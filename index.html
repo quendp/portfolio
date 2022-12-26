@@ -6,22 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./sources/images/favicon.jpg"
+      href="./src/images/favicon.jpg"
       type="image/x-icon"
     />
-    <title>Quen Del Pilar</title>
+    <title>Quen Del Pilar | Full-Stack Web Developer</title>
     <link rel="stylesheet" href="./src/styles/main.css" />
   </head>
-  <body class="grid min-h-screen place-content-center">
-    <div
-      class="grid h-52 w-52 place-content-center rounded-full bg-emerald-500 shadow-2xl"
-    >
+  <body>
+    <div class="relative flex min-h-screen min-w-full bg-slate-200">
+      <!-- loader screen -->
       <div
-        class="grid h-32 w-32 place-content-center rounded-full bg-teal-200 shadow-2xl"
+        class="absolute flex min-h-screen min-w-full items-center justify-center bg-neutral-900"
+        id="loaderWrapper"
       >
-        <div class="h-16 w-16 rounded-full bg-orange-500"></div>
+        <div
+          class="relative flex w-56 flex-col items-center justify-center overflow-hidden"
+          id="loaderContainer"
+        >
+          <div
+            class="absolute left-0 z-10 h-full w-0 bg-neutral-900"
+            id="loaderBefore"
+          ></div>
+          <div class="mb-5 overflow-hidden text-center">
+            <p
+              class="translate-y-20 text-lg text-slate-200 opacity-0 transition duration-1000"
+              id="loaderText"
+            >
+              Hi, I am Quen Del Pilar.
+            </p>
+          </div>
+          <div
+            class="flex w-full flex-col items-center justify-center opacity-0 transition-opacity duration-1000"
+            id="loaderSub"
+          >
+            <div class="mb-2 h-1 w-0 rounded bg-slate-300" id="loaderBar"></div>
+            <p class="text-slate-200"><span id="loaderPercent">0</span>%</p>
+          </div>
+          <div
+            class="absolute right-0 h-full w-0 bg-neutral-900"
+            id="loaderAfter"
+          ></div>
+        </div>
       </div>
+
+      <!-- header -->
+      <header></header>
+
+      <!-- main content -->
+      <main></main>
+
+      <!-- footer -->
+      <footer></footer>
     </div>
-    <script src="./sources/scripts/main.js"></script>
+    <script src="./src/scripts/loader.js"></script>
+    <script src="./src/scripts/main.js"></script>
   </body>
 </html>
