@@ -12,8 +12,10 @@ let percentValue = 1;
 let documentLoaded = false;
 const loadScreen = () => {
     loaderSub.style.maxWidth = "12.9rem"
-    loaderText.style.opacity = "1";
-    loaderText.style.transform = "translateY(0)";
+    setTimeout(() => {
+        loaderText.style.opacity = "1";
+        loaderText.style.transform = "translateY(0)";  
+    }, 500);
     setTimeout(() => {
         loaderSub.style.opacity = "1";
     }, 1500);
@@ -30,7 +32,7 @@ const loadScreen = () => {
                 percentValue++;
             };
         }, 50);
-    }, 500);
+    }, 2000);
 };
 
 const exitLoader = () => {
@@ -42,12 +44,15 @@ const exitLoader = () => {
         loaderText.style.transform = "translateY(0)";
     }, 500);
     setTimeout(() => {
+        loaderText.style.transform = "translateY(5rem)";
+    }, 2000);
+    setTimeout(() => {
         loaderBefore.style.transition = "width 800ms ease-in-out";
         loaderAfter.style.transition = "width 800ms ease-in-out";
         loaderBefore.style.width = "50%";
         loaderAfter.style.width = "50%";
         loaderWrapper.style.clipPath = "circle(100%)";
-    }, 2000);
+    }, 2500);
     setTimeout(() => {
         loaderWrapper.style.transition = "all 1000ms ease-in-out";
         loaderWrapper.style.clipPath = "circle(3%)";
