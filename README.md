@@ -1,5 +1,5 @@
 # E-Portfolio & Personal Website
-[VIEW LIVE WEBSITE]()
+[VIEW LIVE WEBSITE](https://quendp.github.io/portfolio/)
 
 ---
 
