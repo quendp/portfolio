@@ -1,28 +1,27 @@
-# E-Portfolio & Personal Website
-[VIEW LIVE WEBSITE](https://quendp.github.io/portfolio/)
+# Portfolio Website using React JS and Tailwind CSS
+
+[VIEW LIVE WEBSITE]()
 
 ---
 
 ## 📌 Key Features
+
 - FEATURES
 
+## 📝 Description
 
-## 📝 Description 
 DESCRIPTION
 
-
-
 ## 🗓️ Date Finished
+
 DATE
 
-
-
 ## ⌛ Time Spent
-TIME
 
+TIME
 
 ---
 
+### 💛 Credits
 
-### 💛 Credits 
 - CREDITS
