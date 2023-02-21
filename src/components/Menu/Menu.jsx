@@ -1,10 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({ isLoading }) => {
+  const menuStyle = {
+    transition: "left 800ms ease-in-out, right 800ms ease-in-out",
+  };
+
   return (
     <>
-      <section className="custom-ff-bold text-md absolute top-60 left-0 z-10 w-full -translate-y-full p-5 pb-10 text-center text-cyan-500 md:top-1/2 md:w-1/2 md:-translate-y-1/2 md:text-left md:text-2xl">
+      <section
+        style={menuStyle}
+        className={`custom-ff-heading absolute top-60 text-sm ${
+          !isLoading ? "left-0 sm:left-20" : "-left-full"
+        } z-10 w-full -translate-y-full p-5 pb-10 text-center text-cyan-500 sm:top-1/2 sm:w-1/2 sm:-translate-y-1/2 sm:text-left sm:text-lg`}
+      >
         <nav>
           <ul>
             <li className="p-2">
@@ -19,10 +28,15 @@ const Menu = () => {
           </ul>
         </nav>
       </section>
-      <section className="custom-ff-bold text-md absolute top-60 right-0 z-10 w-full -translate-y-1/2 p-5 text-center text-cyan-500  md:top-1/2 md:w-1/2 md:text-right md:text-2xl">
+      <section
+        style={menuStyle}
+        className={`custom-ff-heading absolute top-60 text-sm ${
+          !isLoading ? "right-0 sm:right-20" : "-right-full"
+        } z-10 w-full -translate-y-1/2 p-5 text-center text-cyan-500  sm:top-1/2 sm:w-1/2 sm:text-right sm:text-lg`}
+      >
         <nav>
           <ul>
-            <li className="p-2 pt-10 md:pt-2">
+            <li className="p-2 pt-10 sm:pt-2">
               <Link to="/curriculum-vitae">Curriculum Vitae</Link>
             </li>
             <li className="p-2">

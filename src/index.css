@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Gajraj+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gajraj+One&family=Michroma&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,11 +21,31 @@ html {
 }
 
 body {
-  background-color: #0f172a;
+  background: rgb(6, 182, 212);
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 1) 0%,
+    rgb(25, 47, 99) 5%,
+    rgba(15, 23, 42, 1) 30%
+  );
+  background-size: 180% 180%;
+  animation: gradient-animation 60s ease infinite;
   overflow: hidden;
+  width: 100%;
+  height: 100vh;
 }
+
+.custom-body-wrapper {
+  backdrop-filter: blur(50px);
+}
+
 .custom-ff-reg {
-  font-family: "Play", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.custom-ff-heading {
+  font-family: "Michroma", sans-serif;
   font-weight: 400;
 }
 
@@ -43,26 +62,24 @@ body {
   text-shadow: 0 0 20px #fce7f3;
 }
 
-.my-image {
-  margin-top: -5rem;
+.custom-text-shadow-cyan {
+  text-shadow: 0 0 20px #06b6d4;
 }
 
-.custom-text-stroke {
-  -webkit-text-stroke: 1px #06b6d4;
-}
-
-.custom-text-stroke::before {
-  content: "";
-  background: rgb(15, 23, 42);
-  background: linear-gradient(
-    0deg,
-    rgba(15, 23, 42, 1) 5%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 75% 25%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 25% 75%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }

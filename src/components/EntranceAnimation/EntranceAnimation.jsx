@@ -1,49 +1,14 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/logo/icon-white.png";
+import logo from "../../assets/logo/icon-cyan-glow.png";
 
-const EntranceAnimation = () => {
-  const [mainBG, setMainBG] = useState("1");
+const EntranceAnimation = ({ endEntAnimation }) => {
   const [logoOpacity, setLogoOpacity] = useState("0");
-  const [logoImgOpacity, setLogoImgOpacity] = useState("1");
-  const [logoTextTransform, setLogoTextTransform] = useState("0");
-  const [titleDTransform, setTitleDTransform] = useState("-100");
-  const [titlePTransform, setTitlePTransform] = useState("0");
-  const [titleDisplay, setTitleDisplay] = useState("none");
-  const [titleOpacity, setTitleOpacity] = useState("0");
-  const [titleFontSize, setTitleFontSize] = useState("inherit");
-
-  const mainWrapStyle = {
-    backgroundColor: mainBG,
-    transition: "background-color 1000ms ease-in-out",
-  };
-
-  const logoStyle = {
-    opacity: logoOpacity,
-  };
-
-  const logoImgStyle = {
-    opacity: logoImgOpacity,
-  };
-
-  const logoTextStyle = {
-    transform: `translateY(${logoTextTransform}rem)`,
-    fontSize: titleFontSize,
-    transition: `transform 1000ms ease-in-out, font-size 1000ms ease-in-out`,
-  };
-
-  const titleStyle = {
-    transition: "opacity 400ms ease-in-out",
-    display: titleDisplay,
-    opacity: titleOpacity,
-  };
-
-  const titleDStyle = {
-    transform: `translate(${titleDTransform}%, -51%)`,
-  };
-
-  const titlePStyle = {
-    transform: `translate(${titlePTransform}%, -51%)`,
-  };
+  const [logoDisplay, setLogoDisplay] = useState("block");
+  const [devOpacity, setDevOpacity] = useState("0");
+  const [devBottom, setDevBottom] = useState("45%");
+  const [dpLeft, setdpLeft] = useState("1.7");
+  const [eveloOpacity, setEveloOpacity] = useState("0");
+  const [devFontSize, setDevFontSize] = useState("inherit");
 
   const animationDelay = (time) => {
     return new Promise((resolve) => {
@@ -54,24 +19,24 @@ const EntranceAnimation = () => {
   const startAnimation = async () => {
     try {
       await animationDelay(500);
-      setLogoOpacity("1");
+      setLogoOpacity("100");
+      setDevOpacity("100");
       await animationDelay(2500);
-      setLogoImgOpacity("0");
+      setLogoOpacity("0");
       await animationDelay(500);
-      setLogoTextTransform("-3");
-      await animationDelay(1500);
-      setTitleDisplay("inline-block");
-      setTitleDTransform("-320");
-      setTitlePTransform("245");
+      setDevBottom("50%");
+      await animationDelay(500);
+      setdpLeft("0");
       await animationDelay(800);
-      setTitleOpacity("1");
-      await animationDelay(800);
-      setLogoTextTransform("13");
-      setTitleFontSize("9vw");
-      await animationDelay(800);
-      setMainBG("transparent"); //change to zero later
+      setEveloOpacity("1");
+      await animationDelay(500);
+      setLogoDisplay("hidden");
+      setDevFontSize("19vw");
+      setDevBottom("10vw");
     } catch (error) {
       console.log(error);
+    } finally {
+      endEntAnimation();
     }
   };
 
@@ -80,63 +45,89 @@ const EntranceAnimation = () => {
   }, []);
 
   return (
-    <div
-      className="fixed bottom-0 left-1/2 z-10 flex h-screen w-full -translate-x-1/2 items-center justify-center bg-slate-900"
-      style={mainWrapStyle}
-    >
+    <>
+      <img
+        className={`absolute w-10 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 ease-in-out md:w-20 opacity-${logoOpacity} ${logoDisplay}`}
+        src={logo}
+        alt="Quen DP Logo"
+        style={{ top: "45%", left: "50%" }}
+      />
       <div
-        className="custom-ff-bold flex w-full flex-col items-center text-center text-sm uppercase text-red-50 transition-opacity duration-500 ease-in-out md:text-lg"
-        style={logoStyle}
+        className={`custom-ff-bold custom-text-shadow-cyan absolute -translate-x-1/2 -translate-y-1/2 text-center text-cyan-500 transition-opacity duration-500 ease-in-out opacity-${logoOpacity} ${logoDisplay}`}
+        style={{ top: "52%", left: "50%" }}
       >
-        <img
-          className="mb-3 w-10 transition-opacity duration-500 ease-in-out md:w-16"
-          src={logo}
-          alt="Quen DP Logo"
-          style={logoImgStyle}
-        />
-        <div
-          className="custom-text-shadow-rose mb-2 flex justify-center tracking-widest transition-opacity duration-500 ease-in-out"
-          style={logoImgStyle}
-        >
-          <span>q</span>
-          <span>u</span>
-          <span>e</span>
-          <span>n</span>
-        </div>
-        <div
-          className="custom-text-shadow-rose relative z-10 flex max-w-full justify-evenly tracking-widest"
-          style={logoTextStyle}
-        >
-          <span
-            style={titleDStyle}
-            className="absolute top-1/2 left-1/2 text-center transition-transform duration-500 ease-in-out"
-          >
-            d
-          </span>
-          <span className="text-center" style={titleStyle}>
-            e
-          </span>
-          <span className="text-center" style={titleStyle}>
-            v
-          </span>
-          <span className="text-center" style={titleStyle}>
-            e
-          </span>
-          <span className="text-center" style={titleStyle}>
-            l
-          </span>
-          <span className="text-center" style={titleStyle}>
-            o
-          </span>
-          <span
-            style={titlePStyle}
-            className="absolute top-1/2 left-1/2 text-center transition-transform duration-500 ease-in-out"
-          >
-            p
-          </span>
-        </div>
+        <span>Q</span>
+        <span>U</span>
+        <span>E</span>
+        <span>N</span>
       </div>
-    </div>
+      <div
+        className={`custom-ff-bold custom-text-shadow-cyan absolute -translate-x-1/2 translate-y-1/2 text-center text-cyan-500 opacity-${devOpacity}`}
+        style={{
+          bottom: devBottom,
+          left: "50%",
+          transition:
+            "opacity 500ms ease-in-out, bottom 800ms ease-in-out, font-size 800ms ease-in-out",
+          fontSize: devFontSize,
+        }}
+      >
+        <span
+          className="relative"
+          style={{ left: `${dpLeft}rem`, transition: "left 800ms ease-in-out" }}
+        >
+          D
+        </span>
+        <span
+          style={{
+            opacity: eveloOpacity,
+            transition: "opacity 400ms ease-in-out",
+          }}
+        >
+          E
+        </span>
+        <span
+          style={{
+            opacity: eveloOpacity,
+            transition: "opacity 400ms ease-in-out",
+          }}
+        >
+          V
+        </span>
+        <span
+          style={{
+            opacity: eveloOpacity,
+            transition: "opacity 400ms ease-in-out",
+          }}
+        >
+          E
+        </span>
+        <span
+          style={{
+            opacity: eveloOpacity,
+            transition: "opacity 400ms ease-in-out",
+          }}
+        >
+          L
+        </span>
+        <span
+          style={{
+            opacity: eveloOpacity,
+            transition: "opacity 400ms ease-in-out",
+          }}
+        >
+          O
+        </span>
+        <span
+          className="relative"
+          style={{
+            left: `-${dpLeft}rem`,
+            transition: "left 800ms ease-in-out",
+          }}
+        >
+          P
+        </span>
+      </div>
+    </>
   );
 };
 
