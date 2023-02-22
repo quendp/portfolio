@@ -33,22 +33,30 @@ const EntranceAnimation = ({ isLoading, endEntAnimation, currentLocation }) => {
       setLogoDisplay("hidden");
       setDevFontSize("19vw");
       setDevBottom("10vw");
-      console.log("hello world!");
     } catch (error) {
       console.log(error);
     } finally {
+      if (currentLocation !== "/") {
+        setDevBottom("-10vw");
+        setDevOpacity("0");
+      }
       endEntAnimation();
     }
   };
 
   useEffect(() => {
-    console.log(currentLocation);
     if (isLoading) {
       startAnimation();
+    } else if (currentLocation !== "/") {
+      setDevBottom("-10vw");
+      setDevOpacity("0");
+      endEntAnimation();
     } else {
+      setDevBottom("10vw");
+      setDevOpacity("100");
       endEntAnimation();
     }
-  }, []);
+  }, [currentLocation]);
 
   return (
     <>

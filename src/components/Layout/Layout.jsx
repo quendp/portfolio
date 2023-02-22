@@ -1,37 +1,61 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import EntranceAnimation from "../entranceAnimation/entranceAnimation";
+import { AnimatePresence, motion } from "framer-motion";
+import EntranceAnimation from "../EntranceAnimation/EntranceAnimation";
 import Menu from "../Menu/Menu";
 
 const Layout = ({ isLoading, endEntAnimation }) => {
   const currentLocation = useLocation().pathname;
+  const [showMenu, setShowMenu] = useState(false);
 
-  // const [currentLocation, setCurrentLocation] = useState(location.pathname);
+  useEffect(() => {
+    if (isLoading) {
+      setShowMenu(false);
+    } else if (currentLocation !== "/") {
+      setShowMenu(false);
+    } else {
+      setShowMenu(true);
+    }
+  }, [isLoading, currentLocation]);
 
-  // useEffect(() => {
-  //   setCurrentLocation(location.pathname);
-  // }, [location]);
-
-  const changePageAnimation = async () => {
-    console.log("changePageAnimation is called");
+  const toggleMenu = () => {
+    if (showMenu) {
+      setShowMenu(false);
+    } else {
+      setShowMenu(true);
+    }
   };
 
   return (
-    <div className="custom-body-wrapper relative h-screen w-full overflow-hidden">
-      <EntranceAnimation
-        isLoading={isLoading}
-        endEntAnimation={endEntAnimation}
-        currentLocation={currentLocation}
-      />
-      <div className="h-screen w-full">
-        <Outlet />
+    <AnimatePresence>
+      <div className="custom-body-wrapper relative h-screen w-full overflow-hidden">
+        <EntranceAnimation
+          isLoading={isLoading}
+          endEntAnimation={endEntAnimation}
+          currentLocation={currentLocation}
+        />
+        <motion.main
+          className=" h-screen w-full transition-opacity duration-1000 ease-in-out"
+          key={currentLocation}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 0.3,
+            ease: [0.5, 0.71, 1, 1.5],
+          }}
+          exit={{ opacity: 0 }}
+        >
+          <Outlet />
+        </motion.main>
+        <Menu
+          showMenu={showMenu}
+          toggleMenu={toggleMenu}
+          currentLocation={currentLocation}
+          isLoading={isLoading}
+        />
       </div>
-      <Menu
-        isLoading={isLoading}
-        changePageAnimation={changePageAnimation}
-        currentLocation={currentLocation}
-      />
-    </div>
+    </AnimatePresence>
   );
 };
 

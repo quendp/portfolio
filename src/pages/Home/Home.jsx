@@ -1,6 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import myImage from "../../assets/my-image-2.png";
+import myImage from "../../assets/my-image.png";
 import techImage from "../../assets/tech-bg-blue-2.png";
 
 const Home = ({ isLoading }) => {
@@ -55,11 +54,10 @@ const Home = ({ isLoading }) => {
         </g>
       </svg>
       <div
-        className="absolute left-1/2 bottom-0 overflow-hidden"
+        className="absolute left-1/2 bottom-0 -translate-x-1/2 overflow-hidden"
         style={{
           width: "47vw",
           minWidth: "20rem",
-          transform: "translateX(-46%)",
         }}
       >
         <img

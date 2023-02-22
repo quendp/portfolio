@@ -18,7 +18,6 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: "/",
       element: (
         <Layout isLoading={isLoading} endEntAnimation={endEntAnimation} />
       ),
