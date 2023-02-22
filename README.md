@@ -1,6 +1,6 @@
 # Portfolio Website using React JS and Tailwind CSS V.1.0.0
 
-<br/ >
+<br>
 
 <p align="center"> <a href="https://quendp.com/"> VIEW LIVE WEBSITE</a> </p>
 
@@ -28,7 +28,7 @@
 - Entrance animations
 - Page transitions
 
-<br/ >
+<br>
 
 ## 📝 Description
 
@@ -38,13 +38,13 @@ There are also several pages or routes in this website such as the homepage, abo
 
 Lastly, it took more or less 24 hours to finish v.1.0.0 and I think it was pretty worth it. With that being said, I hope you'll like my work and feel free to give a feedback or suggestion to me either through <a href="mailto:hello@quendp.com"> email </a> or thorugh a pull request.
 
-<br/ >
+<br>
 
 ## 🗓️ Date Finished
 
 In progress...
 
-<br/ >
+<br>
 
 ## ⌛ Time Spent
 
@@ -52,7 +52,7 @@ My entire life... and the last 24 hours (after completion of v.1.0.0).
 
 ---
 
-<br/ >
+<br>
 
 ### 💛 Acknowledgements
 
