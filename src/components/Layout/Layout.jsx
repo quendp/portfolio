@@ -1,6 +1,6 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
 import EntranceAnimation from "../EntranceAnimation/EntranceAnimation";
 import Menu from "../Menu/Menu";
 
@@ -35,7 +35,7 @@ const Layout = ({ isLoading, endEntAnimation }) => {
           currentLocation={currentLocation}
         />
         <motion.main
-          className=" h-screen w-full transition-opacity duration-1000 ease-in-out"
+          className=" h-screen w-full"
           key={currentLocation}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
