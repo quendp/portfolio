@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo/icon-cyan-glow.png";
 
-const EntranceAnimation = ({ endEntAnimation }) => {
+const EntranceAnimation = ({ isLoading, endEntAnimation, currentLocation }) => {
   const [logoOpacity, setLogoOpacity] = useState("0");
   const [logoDisplay, setLogoDisplay] = useState("block");
   const [devOpacity, setDevOpacity] = useState("0");
@@ -33,6 +33,7 @@ const EntranceAnimation = ({ endEntAnimation }) => {
       setLogoDisplay("hidden");
       setDevFontSize("19vw");
       setDevBottom("10vw");
+      console.log("hello world!");
     } catch (error) {
       console.log(error);
     } finally {
@@ -41,7 +42,12 @@ const EntranceAnimation = ({ endEntAnimation }) => {
   };
 
   useEffect(() => {
-    startAnimation();
+    console.log(currentLocation);
+    if (isLoading) {
+      startAnimation();
+    } else {
+      endEntAnimation();
+    }
   }, []);
 
   return (
@@ -67,7 +73,7 @@ const EntranceAnimation = ({ endEntAnimation }) => {
           bottom: devBottom,
           left: "50%",
           transition:
-            "opacity 500ms ease-in-out, bottom 800ms ease-in-out, font-size 800ms ease-in-out",
+            "opacity 500ms ease-in-out, bottom 1000ms ease-in-out, font-size 1000ms ease-in-out",
           fontSize: devFontSize,
         }}
       >

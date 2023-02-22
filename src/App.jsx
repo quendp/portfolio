@@ -1,8 +1,13 @@
 import { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
-import EntranceAnimation from "./components/EntranceAnimation/EntranceAnimation";
-import HeroSection from "./components/HeroSection/HeroSection";
-import Menu from "./components/Menu/Menu";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import CurriculumVitae from "./pages/CurriculumVitae/CurriculumVitae";
+import Experience from "./pages/Experience/Experience";
+import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound/NotFound";
+import Portfolio from "./pages/Portfolio/Portfolio";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -11,15 +16,43 @@ function App() {
     setIsLoading(false);
   };
 
-  return (
-    <BrowserRouter>
-      <div className="custom-body-wrapper relative h-screen w-full overflow-hidden">
-        <EntranceAnimation endEntAnimation={endEntAnimation} />
-        <HeroSection isLoading={isLoading} />
-        <Menu isLoading={isLoading} />
-      </div>
-    </BrowserRouter>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <Layout isLoading={isLoading} endEntAnimation={endEntAnimation} />
+      ),
+      errorElement: <NotFound />,
+      children: [
+        {
+          path: "/",
+          element: <Home isLoading={isLoading} />,
+        },
+        {
+          path: "/about",
+          element: <About isLoading={isLoading} />,
+        },
+        {
+          path: "/portfolio",
+          element: <Portfolio isLoading={isLoading} />,
+        },
+        {
+          path: "/curriculum-vitae",
+          element: <CurriculumVitae isLoading={isLoading} />,
+        },
+        {
+          path: "/experience",
+          element: <Experience isLoading={isLoading} />,
+        },
+        {
+          path: "/contact",
+          element: <Contact isLoading={isLoading} />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

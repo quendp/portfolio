@@ -1,26 +1,23 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import myImage from "../../assets/my-image-2.png";
-import techImage from "../../assets/tech-bg-blue.png";
+import techImage from "../../assets/tech-bg-blue-2.png";
 
-const HeroSection = ({ isLoading }) => {
+const Home = ({ isLoading }) => {
   return (
     <>
-      <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden opacity-20">
+      <div
+        className={`${
+          !isLoading ? "opacity-20" : "opacity-0"
+        } absolute bottom-0 left-1/2 w-full max-w-2xl -translate-x-1/2 transition-opacity delay-500 duration-1000 ease-in-out`}
+        style={{
+          width: "47vw",
+          minWidth: "20rem",
+        }}
+      >
         <img
-          className="h-full animate-pulse"
-          style={{ animationDuration: "5000ms" }}
-          src={techImage}
-          alt="Techno background"
-        />
-        <img
-          className="h-full animate-pulse"
-          style={{ animationDuration: "5000ms" }}
-          src={techImage}
-          alt="Techno background"
-        />
-        <img
-          className="h-full animate-pulse"
-          style={{ animationDuration: "5000ms" }}
+          className="w-full animate-spin"
+          style={{ animationDuration: "240000ms" }}
           src={techImage}
           alt="Techno background"
         />
@@ -28,7 +25,7 @@ const HeroSection = ({ isLoading }) => {
       <svg
         className={`${
           !isLoading ? "opacity-100" : "opacity-0"
-        } custom-ff-bold absolute top-5 left-1/2 m-0 w-full -translate-x-1/2 p-0 text-center uppercase leading-none transition-opacity duration-500 ease-in-out `}
+        } custom-ff-bold absolute top-5 left-1/2 m-0 w-full -translate-x-1/2 p-0 text-center uppercase leading-none transition-opacity duration-1000 ease-in-out `}
         width="100%"
         height="19vw"
         xmlns="http://www.w3.org/2000/svg"
@@ -58,16 +55,17 @@ const HeroSection = ({ isLoading }) => {
         </g>
       </svg>
       <div
-        className="absolute left-1/2 bottom-0 -translate-x-1/2 overflow-hidden"
+        className="absolute left-1/2 bottom-0 overflow-hidden"
         style={{
           width: "47vw",
           minWidth: "20rem",
+          transform: "translateX(-46%)",
         }}
       >
         <img
           className={`${
             !isLoading ? "opacity-100" : "opacity-0"
-          } w-full transition-opacity duration-500 ease-in-out`}
+          } w-full transition-opacity duration-1000 ease-in-out`}
           src={myImage}
           alt="Quen Del Pilar"
         />
@@ -76,4 +74,4 @@ const HeroSection = ({ isLoading }) => {
   );
 };
 
-export default HeroSection;
+export default Home;
