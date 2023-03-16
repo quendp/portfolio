@@ -13,14 +13,10 @@ const Menu = ({ showMenu, toggleMenu, currentLocation, isLoading }) => {
   return (
     <>
       <div
-        className={`custom-ff-heading md:text-md absolute top-0 left-0 z-10 text-center text-xs transition-transform duration-500 ease-in-out ${
+        className={`custom-ff-heading md:text-md absolute top-0 left-0 z-10 h-fit w-full text-center text-xs transition-transform duration-500 ease-in-out ${
           currentLocation !== "/" && !isLoading
             ? "-translate-x-0"
             : "translate-x-full"
-        } ${
-          currentLocation !== "/" && showMenu
-            ? "h-screen w-full backdrop-blur-xl"
-            : "h-fit w-full"
         }`}
       >
         <button

@@ -183,6 +183,11 @@ a.active > .custom-nav-item-right::before {
   transform: translate(0%, -50%);
 }
 
+.custom-blur-main {
+  filter: blur(1rem) brightness(30%);
+  transition: filter 1000ms ease-in-out;
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 0%;
