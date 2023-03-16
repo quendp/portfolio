@@ -24,13 +24,19 @@ html {
 body {
   background: rgb(6, 182, 212);
   background: radial-gradient(
-    circle,
-    rgb(12, 46, 160) 0%,
-    rgb(16, 48, 97) 5%,
-    rgb(10, 1, 31) 30%
-  );
-  background-size: 180% 180%;
-  animation: gradient-animation 120s ease infinite;
+      ellipse at -5% 10%,
+      rgba(35, 37, 179, 0.8) 0%,
+      rgba(17, 27, 121, 0.5) 15%,
+      rgba(2, 1, 39, 0.5) 40%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgb(48, 50, 175) 0%,
+      rgb(7, 12, 90) 15%,
+      rgb(2, 1, 39) 30%
+    );
+  background-size: 130% 130%;
+  animation: gradient-animation 15s ease infinite;
   overflow: hidden;
   width: 100%;
   height: 100vh;
@@ -64,12 +70,17 @@ body {
 }
 
 .custom-text-shadow-cyan {
-  text-shadow: 0 0 10px #1ecfee;
+  text-shadow: 0 0 10px #167586;
 }
 
 .custom-nav-item-left {
   width: 15rem;
   min-width: 90%;
+}
+
+a.active > .custom-nav-item-left,
+a.active > .custom-nav-item-right {
+  color: #68e8ff;
 }
 
 .custom-nav-item-left::after {
@@ -93,6 +104,11 @@ body {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
+a.active > .custom-nav-item-left::after {
+  background-color: #0e78ceb0;
+  transform: translate(-50%, -50%);
+}
+
 .custom-nav-item-left::before {
   content: "";
   position: absolute;
@@ -108,6 +124,11 @@ body {
 .custom-nav-item-left:active::before {
   background-color: #0099ff50;
   transform: translate(-5%, -50%) scale(1.05);
+}
+
+a.active > .custom-nav-item-left::before {
+  background-color: #0e78ceb0;
+  transform: translate(0%, -50%);
 }
 
 .custom-nav-item-right {
@@ -135,6 +156,11 @@ body {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
+a.active > .custom-nav-item-right::after {
+  background-color: #0e78ceb0;
+  transform: translate(-50%, -50%);
+}
+
 .custom-nav-item-right::before {
   content: "";
   position: absolute;
@@ -152,18 +178,23 @@ body {
   transform: translate(5%, -50%) scale(1.05);
 }
 
+a.active > .custom-nav-item-right::before {
+  background-color: #0e78ceb0;
+  transform: translate(0%, -50%);
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 0%;
   }
   25% {
-    background-position: 75% 25%;
+    background-position: 90% 5%;
   }
   50% {
-    background-position: 100% 100%;
+    background-position: 90% 90%;
   }
   75% {
-    background-position: 25% 75%;
+    background-position: 5% 90%;
   }
   100% {
     background-position: 0% 0%;
@@ -171,8 +202,11 @@ body {
 }
 
 .test-div {
+  overflow-y: scroll;
+  padding: 5rem 20rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
   width: 100%;
@@ -181,4 +215,25 @@ body {
   font-weight: 400;
   font-size: 3rem;
   text-align: center;
+}
+/* width */
+.test-div::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+/* Track */
+.test-div::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 1rem;
+}
+
+/* Handle */
+.test-div::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+}
+
+/* Handle on hover */
+.test-div::-webkit-scrollbar-thumb:hover {
+  background: #0e7490;
 }

@@ -14,17 +14,17 @@ const Home = ({ isLoading }) => {
           minWidth: "20rem",
         }}
       >
-        <img
+        {/* <img
           className="w-full animate-spin"
           style={{ animationDuration: "240000ms" }}
           src={techImage}
           alt="Techno background"
-        />
+        /> */}
       </div>
       <svg
         className={`${
           !isLoading ? "opacity-100" : "opacity-0"
-        } custom-ff-bold absolute top-5 left-1/2 m-0 w-full -translate-x-1/2 p-0 text-center uppercase leading-none transition-opacity duration-1000 ease-in-out `}
+        } custom-ff-bold absolute top-5 left-1/2 m-0 w-full -translate-x-1/2 p-0 text-center uppercase leading-none transition-opacity duration-1000 ease-in-out md:top-0 `}
         width="100%"
         height="19vw"
         xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const Home = ({ isLoading }) => {
             textAnchor="middle"
             dominantBaseline="middle"
           >
-            Level Up
+            Design &
           </text>
         </g>
       </svg>

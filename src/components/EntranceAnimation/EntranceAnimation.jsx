@@ -21,23 +21,23 @@ const EntranceAnimation = ({ isLoading, endEntAnimation, currentLocation }) => {
       await animationDelay(500);
       setLogoOpacity("100");
       setDevOpacity("100");
-      await animationDelay(2500);
+      await animationDelay(1000);
       setLogoOpacity("0");
       await animationDelay(500);
       setDevBottom("50%");
       await animationDelay(500);
       setdpLeft("0");
-      await animationDelay(800);
+      await animationDelay(400);
       setEveloOpacity("1");
       await animationDelay(500);
       setLogoDisplay("hidden");
-      setDevFontSize("19vw");
-      setDevBottom("10vw");
+      setDevFontSize("19.5vw");
+      setDevBottom("8vw");
     } catch (error) {
       console.log(error);
     } finally {
       if (currentLocation !== "/") {
-        setDevBottom("-10vw");
+        setDevBottom("-8vw");
         setDevOpacity("0");
       }
       endEntAnimation();
@@ -48,11 +48,11 @@ const EntranceAnimation = ({ isLoading, endEntAnimation, currentLocation }) => {
     if (isLoading) {
       startAnimation();
     } else if (currentLocation !== "/") {
-      setDevBottom("-10vw");
+      setDevBottom("-8vw");
       setDevOpacity("0");
       endEntAnimation();
     } else {
-      setDevBottom("10vw");
+      setDevBottom("8vw");
       setDevOpacity("100");
       endEntAnimation();
     }
@@ -87,7 +87,7 @@ const EntranceAnimation = ({ isLoading, endEntAnimation, currentLocation }) => {
       >
         <span
           className="relative"
-          style={{ left: `${dpLeft}rem`, transition: "left 800ms ease-in-out" }}
+          style={{ left: `${dpLeft}rem`, transition: "left 400ms ease-in-out" }}
         >
           D
         </span>
@@ -135,7 +135,7 @@ const EntranceAnimation = ({ isLoading, endEntAnimation, currentLocation }) => {
           className="relative"
           style={{
             left: `-${dpLeft}rem`,
-            transition: "left 800ms ease-in-out",
+            transition: "left 400ms ease-in-out",
           }}
         >
           P
