@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Menu = ({ showMenu, toggleMenu, currentLocation, isLoading }) => {
   const menuStyle = {
-    transition: "left 1000ms ease-in-out, right 1000ms ease-in-out",
+    transition: "left 500ms ease-in-out, right 500ms ease-in-out",
   };
 
   const clickMenuHandler = () => {
@@ -29,7 +29,7 @@ const Menu = ({ showMenu, toggleMenu, currentLocation, isLoading }) => {
       <section
         style={menuStyle}
         className={`custom-ff-heading absolute top-40 text-xs ${
-          showMenu ? "left-0 md:left-20" : "-left-72"
+          showMenu ? "left-0 md:left-20" : "sm:-left-74 md:-left-62 -left-full"
         } md:text-md z-10 w-full -translate-y-1/2 p-5 text-center text-cyan-500 sm:top-1/2 sm:w-1/2`}
       >
         <nav>
@@ -55,7 +55,9 @@ const Menu = ({ showMenu, toggleMenu, currentLocation, isLoading }) => {
       <section
         style={menuStyle}
         className={`custom-ff-heading absolute top-72 text-xs ${
-          showMenu ? "right-0 md:right-20" : "-right-72"
+          showMenu
+            ? "right-0 md:right-20"
+            : "sm:-right-74 md:-right-62 -right-full"
         } md:text-md z-10 mt-1.5 w-full -translate-y-1/2 p-5 text-center text-cyan-500 sm:top-1/2 sm:mt-0 sm:w-1/2`}
       >
         <nav>

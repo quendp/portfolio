@@ -206,39 +206,33 @@ a.active > .custom-nav-item-right::before {
   }
 }
 
-.test-div {
-  overflow-y: scroll;
-  padding: 5rem 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  color: aliceblue;
-  font-family: "Gajraj One", sans-serif;
-  font-weight: 400;
-  font-size: 3rem;
-  text-align: center;
-}
 /* width */
-.test-div::-webkit-scrollbar {
+.main-content__wrapper::-webkit-scrollbar {
   width: 5px;
   border-radius: 10px;
 }
 
 /* Track */
-.test-div::-webkit-scrollbar-track {
+.main-content__wrapper::-webkit-scrollbar-track {
   background: transparent;
   margin: 1rem;
 }
 
 /* Handle */
-.test-div::-webkit-scrollbar-thumb {
+.main-content__wrapper::-webkit-scrollbar-thumb {
   background: #06b6d4;
 }
 
 /* Handle on hover */
-.test-div::-webkit-scrollbar-thumb:hover {
+.main-content__wrapper::-webkit-scrollbar-thumb:hover {
   background: #0e7490;
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+.debug-all,
+.debug-all * {
+  border: 1px solid red;
 }
