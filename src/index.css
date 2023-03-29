@@ -42,6 +42,12 @@ body {
   height: 100vh;
 }
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
 .custom-body-wrapper {
   backdrop-filter: blur(50px);
 }
@@ -76,6 +82,27 @@ body {
 .custom-nav-item-left {
   width: 15rem;
   min-width: 90%;
+}
+
+.custom-clip-path__card {
+  clip-path: polygon(
+    3rem 0%,
+    100% 0,
+    100% calc(100% - 3rem),
+    calc(100% - 3rem) 100%,
+    0 100%,
+    0% 3rem
+  );
+  border-radius: 10px;
+}
+
+/* .custom-clip-path__card {
+  clip-path: polygon(10% 0%, 100% 0, 100% 90%, 90% 100%, 0 100%, 0% 10%);
+  border-radius: 10px;
+} */
+
+.custom-clip-path__button {
+  clip-path: polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
 }
 
 a.active > .custom-nav-item-left,
@@ -226,6 +253,14 @@ a.active > .custom-nav-item-right::before {
 /* Handle on hover */
 .main-content__wrapper::-webkit-scrollbar-thumb:hover {
   background: #0e7490;
+}
+
+img::selection {
+  background-color: transparent;
+}
+
+.hide-selection::selection {
+  background-color: transparent !important;
 }
 
 .debug {

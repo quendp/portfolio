@@ -48,7 +48,13 @@ const Layout = ({ isLoading, endEntAnimation }) => {
           }}
           exit={{ opacity: 0 }}
         >
-          <Outlet />
+          <div
+            className={`main-content__wrapper flex h-screen w-full flex-col items-start justify-start overflow-y-scroll px-5 pb-5 pt-20 md:px-20 ${
+              !isLoading ? "opacity-100" : "opacity-0"
+            } transition-opacity delay-500 duration-1000 ease-in-out`}
+          >
+            <Outlet />
+          </div>
         </motion.main>
         <Menu
           showMenu={showMenu}

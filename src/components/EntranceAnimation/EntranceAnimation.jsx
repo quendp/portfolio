@@ -5,7 +5,7 @@ const EntranceAnimation = ({ isLoading, endEntAnimation, currentLocation }) => {
   const [logoOpacity, setLogoOpacity] = useState("0");
   const [logoDisplay, setLogoDisplay] = useState("block");
   const [devOpacity, setDevOpacity] = useState("0");
-  const [devBottom, setDevBottom] = useState("45%");
+  const [devBottom, setDevBottom] = useState("46%");
   const [dpLeft, setdpLeft] = useState("1.7");
   const [eveloOpacity, setEveloOpacity] = useState("0");
   const [devFontSize, setDevFontSize] = useState("inherit");

@@ -2,13 +2,13 @@ import React from "react";
 
 const Contact = ({ isLoading }) => {
   return (
-    <div
-      className={`main-content__wrapper ${
-        !isLoading ? "opacity-100" : "opacity-0"
-      } transition-opacity delay-500 duration-1000 ease-in-out`}
-    >
-      Contact
-    </div>
+    <>
+      <div className="mb-10 flex w-full flex-col items-center justify-center border-b-2 border-cyan-900">
+        <h1 className="custom-ff-bold mb-5 text-center text-xl text-cyan-500 md:text-5xl">
+          Contact
+        </h1>
+      </div>
+    </>
   );
 };
 

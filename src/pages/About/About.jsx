@@ -3,11 +3,7 @@ import myImage from "../../assets/my-image.png";
 
 const About = ({ isLoading }) => {
   return (
-    <div
-      className={`main-content__wrapper flex h-screen w-full flex-col items-start justify-between overflow-y-scroll px-5 pb-5 pt-20 md:px-20 ${
-        !isLoading ? "opacity-100" : "opacity-0"
-      } transition-opacity delay-500 duration-1000 ease-in-out`}
-    >
+    <>
       <div className="mb-10 flex w-full flex-col items-center justify-center border-b-2 border-cyan-900">
         <h1 className="custom-ff-bold mb-5 text-center text-xl text-cyan-500 md:text-5xl">
           Hi. I am Quen Del Pilar.
@@ -32,7 +28,7 @@ const About = ({ isLoading }) => {
           </a>
           <a
             className="m-1 sm:m-2"
-            href="https://fb.com/itsquendp/"
+            href="https://www.facebook.com/itskendp"
             target="blank"
           >
             <img src="https://img.shields.io/badge/-Facebook-083344?style=flat-square&logo=facebook" />
@@ -47,7 +43,7 @@ const About = ({ isLoading }) => {
         </div>
       </div>
       <div className="flex h-full flex-col items-center p-0 md:flex-row">
-        <div className="custom-ff-heading md:text-md mb-10 flex w-full flex-col justify-center px-5 text-center text-sm leading-relaxed text-cyan-200 md:mb-0 md:w-1/2 md:pr-0 md:pl-2 md:text-left lg:pl-20 xl:text-xl">
+        <div className="custom-ff-heading md:text-md mb-10 flex w-full flex-col justify-center px-5 text-center text-sm leading-relaxed text-cyan-200 md:mb-0 md:w-1/2 md:pr-0 md:pl-2 md:text-left lg:pl-8 xl:pl-20 xl:text-xl">
           <p className="mb-10">
             I am a software engineer who specializes in full-stack web
             development using React JS and Node JS.
@@ -61,7 +57,7 @@ const About = ({ isLoading }) => {
 
           <p className="mb-5">Languages and tools I've been using:</p>
 
-          <div className="flex flex-wrap justify-center md:justify-between">
+          <div className="flex flex-wrap content-start justify-center md:justify-between">
             <img
               className="m-1"
               src="https://img.shields.io/badge/-JavaScript-083344?style=flat-square&logo=javascript"
@@ -160,7 +156,7 @@ const About = ({ isLoading }) => {
             />
           </div>
         </div>
-        <div className="flex w-full justify-center pr-0 sm:w-3/4 md:w-1/2 md:pr-2 lg:pr-20">
+        <div className="flex w-full justify-center pr-0 sm:w-3/4 md:w-1/2 md:pr-2 lg:pr-8 xl:pl-20">
           <img
             className={`h-auto w-full transition-opacity duration-1000 ease-in-out`}
             src={myImage}
@@ -168,7 +164,7 @@ const About = ({ isLoading }) => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

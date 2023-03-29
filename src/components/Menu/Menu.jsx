@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Menu = ({ showMenu, toggleMenu, currentLocation, isLoading }) => {
   const menuStyle = {
-    transition: "left 500ms ease-in-out, right 500ms ease-in-out",
+    transition: "left 800ms ease-in-out, right 800ms ease-in-out",
   };
 
   const clickMenuHandler = () => {

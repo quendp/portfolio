@@ -1,6 +1,5 @@
 import React from "react";
 import myImage from "../../assets/my-image.png";
-import techImage from "../../assets/tech-bg-blue-2.png";
 
 const Home = ({ isLoading }) => {
   return (
@@ -13,18 +12,11 @@ const Home = ({ isLoading }) => {
           width: "47vw",
           minWidth: "20rem",
         }}
-      >
-        {/* <img
-          className="w-full animate-spin"
-          style={{ animationDuration: "240000ms" }}
-          src={techImage}
-          alt="Techno background"
-        /> */}
-      </div>
+      ></div>
       <svg
         className={`${
           !isLoading ? "opacity-100" : "opacity-0"
-        } custom-ff-bold absolute top-5 left-1/2 m-0 w-full -translate-x-1/2 p-0 text-center uppercase leading-none transition-opacity duration-1000 ease-in-out md:top-0 `}
+        } hide-selection  custom-ff-bold duration-800 absolute top-5 left-1/2 m-0 w-full -translate-x-1/2 p-0 text-center uppercase leading-none transition-opacity ease-in-out md:top-0 `}
         width="100%"
         height="19vw"
         xmlns="http://www.w3.org/2000/svg"
