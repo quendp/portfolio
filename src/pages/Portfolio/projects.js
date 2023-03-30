@@ -72,7 +72,7 @@ export const projects = [
       ["CSS 3", "css3"],
       ["Bootstrap", "bootstrap"],
     ],
-    date: "2022-12-11",
+    date: "2023-03-28",
     links: {
       github: "https://github.com/quendp/g4-mini-project-2",
       live: "https://lakbay.quendp.com/",
@@ -80,7 +80,7 @@ export const projects = [
   },
   {
     id: 2,
-    relevance: 4,
+    relevance: 6,
     images: [
       { id: 1, file: p2_1 },
       { id: 2, file: p2_2 },
@@ -107,7 +107,7 @@ export const projects = [
       ["Tailwind CSS", "tailwindcss"],
       ["Git", "git"],
     ],
-    date: "2023-03-25",
+    date: "2023-03-30",
     links: {
       github: "https://github.com/quendp/portfolio",
       live: "https://quendp.com/",
@@ -115,7 +115,7 @@ export const projects = [
   },
   {
     id: 3,
-    relevance: 3,
+    relevance: 4,
     images: [
       { id: 1, file: p3_1 },
       { id: 2, file: p3_2 },
@@ -176,7 +176,7 @@ export const projects = [
       ["CSS 3", "css3"],
       ["Git", "git"],
     ],
-    date: "2023-01-14",
+    date: "2022-12-12",
     links: {
       github: "https://github.com/quendp/calculator-math-game",
       live: "https://quendp.github.io/calculator-math-game/",
@@ -210,7 +210,7 @@ export const projects = [
       ["CSS 3", "css3"],
       ["Git", "git"],
     ],
-    date: "2022-11-20",
+    date: "2022-11-24",
     links: {
       github: "https://github.com/quendp/html-forms",
       live: "https://quendp.github.io/html-forms/",

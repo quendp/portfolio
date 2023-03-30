@@ -4,13 +4,14 @@ import { projects } from "./projects";
 
 const Portfolio = ({ isLoading }) => {
   const [projectList, setProjectList] = useState(projects);
+  const [filterValue, setFilterValue] = useState("all");
+  const [sortValue, setSortValue] = useState("rel-desc");
 
-  const filterProjects = (e) => {
-    e.preventDefault();
-    if (e.target.value === "all") {
-      setProjectList(projects);
+  const filterProjects = (value, array) => {
+    if (value === "all") {
+      return array;
     } else {
-      setProjectList(projects.filter((proj) => proj.type == e.target.value));
+      return array.filter((proj) => proj.type == value);
     }
   };
   const sortByRelDesc = (a, b) => {
@@ -29,10 +30,9 @@ const Portfolio = ({ isLoading }) => {
     const bDate = b.date.split("-").join("");
     return aDate > bDate ? 1 : -1;
   };
-  const sortProjects = (e) => {
-    let newArr = projectList;
-    e.preventDefault();
-    switch (e.target.value) {
+  const sortProjects = (value, array) => {
+    let newArr = array;
+    switch (value) {
       case "rel-desc":
         newArr = newArr.sort(sortByRelDesc);
         break;
@@ -46,10 +46,16 @@ const Portfolio = ({ isLoading }) => {
         newArr = newArr.sort(sortByDateAsc);
         break;
       default:
-        setProjectList(newArr);
+        return newArr;
     }
-    setProjectList([...newArr]);
+    return newArr;
   };
+
+  useEffect(() => {
+    const filteredArr = filterProjects(filterValue, projects);
+    const sortedArr = sortProjects(sortValue, filteredArr);
+    setProjectList([...sortedArr]);
+  }, [filterValue, sortValue]);
 
   return (
     <>
@@ -73,7 +79,7 @@ const Portfolio = ({ isLoading }) => {
             className="w-50 rounded-md border-0 bg-cyan-900 px-3 py-2 outline-0"
             name="filters"
             id="filters"
-            onChange={filterProjects}
+            onChange={(e) => setFilterValue(e.target.value)}
           >
             <option className="m-3" value="all">
               All
@@ -97,7 +103,7 @@ const Portfolio = ({ isLoading }) => {
             className="w-50 rounded-md border-0 bg-cyan-900 px-3 py-2 outline-0"
             name="sorts"
             id="sorts"
-            onChange={sortProjects}
+            onChange={(e) => setSortValue(e.target.value)}
           >
             <option className="m-3" value="rel-desc">
               Most Relevant
