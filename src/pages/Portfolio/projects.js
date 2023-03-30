@@ -92,6 +92,7 @@ export const projects = [
     role: ["Solo Project"],
     features: [
       "Fully responsive",
+      "Contact form using Email JS with form validation",
       "Modern & tech inspired user interface",
       "Custom animations",
       "Entrance animations",

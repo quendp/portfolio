@@ -125,8 +125,8 @@ const Portfolio = ({ isLoading }) => {
           projectList.map((proj) => <ProjectCards key={proj.id} proj={proj} />)}
       </div>
       {projectList.length === 0 && (
-        <div className="custom-ff-heading my-6 flex w-full justify-center text-center text-xs text-cyan-200 md:text-sm">
-          <h2>No Projects found</h2>
+        <div className="custom-ff-heading my-6 flex h-1/4 w-full items-center justify-center text-center text-xs text-cyan-200 md:text-sm">
+          <h2>No Projects found.</h2>
         </div>
       )}
     </>

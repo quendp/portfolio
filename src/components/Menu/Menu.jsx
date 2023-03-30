@@ -67,9 +67,9 @@ const Menu = ({ showMenu, toggleMenu, currentLocation, isLoading }) => {
                 Curriculum Vitae
               </li>
             </NavLink>
-            <NavLink to="/experience">
+            <NavLink to="/blog">
               <li className="custom-nav-item-right relative m-1.5 p-2 sm:m-2">
-                Experience
+                Blog
               </li>
             </NavLink>
             <NavLink to="/contact">

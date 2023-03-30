@@ -35,7 +35,7 @@ const Layout = ({ isLoading, endEntAnimation }) => {
           currentLocation={currentLocation}
         />
         <motion.main
-          className={`h-screen w-full ${
+          className={`h-screen  w-full ${
             currentLocation !== "/" && showMenu ? "custom-blur-main" : ""
           }`}
           key={currentLocation}

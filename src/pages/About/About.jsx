@@ -45,8 +45,8 @@ const About = ({ isLoading }) => {
       <div className="flex h-full flex-col items-center p-0 md:flex-row">
         <div className="custom-ff-heading md:text-md mb-10 flex w-full flex-col justify-center px-5 text-center text-sm leading-relaxed text-cyan-200 md:mb-0 md:w-1/2 md:pr-0 md:pl-2 md:text-left lg:pl-8 xl:pl-20 xl:text-xl">
           <p className="mb-10">
-            I am a software engineer who specializes in full-stack web
-            development using React JS and Node JS.
+            I am a software engineer from the Philippines who specializes in
+            full-stack web development using React JS and Node JS.
           </p>
           <p className="mb-20">
             I could also work on graphic design projects such as logo design,

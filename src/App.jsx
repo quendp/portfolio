@@ -2,9 +2,9 @@ import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import About from "./pages/About/About";
+import Blog from "./pages/Blog/Blog";
 import Contact from "./pages/Contact/Contact";
 import CurriculumVitae from "./pages/CurriculumVitae/CurriculumVitae";
-import Experience from "./pages/Experience/Experience";
 import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import Portfolio from "./pages/Portfolio/Portfolio";
@@ -40,8 +40,8 @@ function App() {
           element: <CurriculumVitae isLoading={isLoading} />,
         },
         {
-          path: "/experience",
-          element: <Experience isLoading={isLoading} />,
+          path: "/blog",
+          element: <Blog isLoading={isLoading} />,
         },
         {
           path: "/contact",

@@ -16,7 +16,7 @@ const Home = ({ isLoading }) => {
       <svg
         className={`${
           !isLoading ? "opacity-100" : "opacity-0"
-        } hide-selection  custom-ff-bold duration-800 absolute top-5 left-1/2 m-0 w-full -translate-x-1/2 p-0 text-center uppercase leading-none transition-opacity ease-in-out md:top-0 `}
+        } hide-selection custom-ff-bold duration-800 pointer-events-none absolute top-5 left-1/2 m-0 w-full -translate-x-1/2 p-0 text-center uppercase leading-none transition-opacity ease-in-out md:top-0 `}
         width="100%"
         height="19vw"
         xmlns="http://www.w3.org/2000/svg"

@@ -76,7 +76,7 @@ const EntranceAnimation = ({ isLoading, endEntAnimation, currentLocation }) => {
         <span>N</span>
       </div>
       <div
-        className={`custom-ff-bold custom-text-shadow-cyan absolute -translate-x-1/2 translate-y-1/2 text-center text-cyan-500 opacity-${devOpacity}`}
+        className={`custom-ff-bold custom-text-shadow-cyan pointer-events-none absolute -translate-x-1/2 translate-y-1/2 text-center text-cyan-500 opacity-${devOpacity}`}
         style={{
           bottom: devBottom,
           left: "50%",

@@ -96,11 +96,6 @@ button {
   border-radius: 10px;
 }
 
-/* .custom-clip-path__card {
-  clip-path: polygon(10% 0%, 100% 0, 100% 90%, 90% 100%, 0 100%, 0% 10%);
-  border-radius: 10px;
-} */
-
 .custom-clip-path__button {
   clip-path: polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
 }
