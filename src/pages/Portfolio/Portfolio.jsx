@@ -1,8 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProjectCards from "./ProjectCards";
 import { projects } from "./projects";
 
 const Portfolio = ({ isLoading }) => {
+  const [projectList, setProjectList] = useState(projects);
+
+  const filterProjects = (e) => {
+    e.preventDefault();
+    if (e.target.value === "all") {
+      setProjectList(projects);
+    } else {
+      setProjectList(projects.filter((proj) => proj.type == e.target.value));
+    }
+  };
+  const sortByRelDesc = (a, b) => {
+    return b.relevance > a.relevance ? 1 : -1;
+  };
+  const sortByRelAsc = (a, b) => {
+    return a.relevance > b.relevance ? 1 : -1;
+  };
+  const sortByDateDesc = (a, b) => {
+    const aDate = a.date.split("-").join("");
+    const bDate = b.date.split("-").join("");
+    return bDate > aDate ? 1 : -1;
+  };
+  const sortByDateAsc = (a, b) => {
+    const aDate = a.date.split("-").join("");
+    const bDate = b.date.split("-").join("");
+    return aDate > bDate ? 1 : -1;
+  };
+  const sortProjects = (e) => {
+    let newArr = projectList;
+    e.preventDefault();
+    switch (e.target.value) {
+      case "rel-desc":
+        newArr = newArr.sort(sortByRelDesc);
+        break;
+      case "rel-asc":
+        newArr = newArr.sort(sortByRelAsc);
+        break;
+      case "date-desc":
+        newArr = newArr.sort(sortByDateDesc);
+        break;
+      case "date-asc":
+        newArr = newArr.sort(sortByDateAsc);
+        break;
+      default:
+        setProjectList(newArr);
+    }
+    setProjectList([...newArr]);
+  };
+
   return (
     <>
       <div className="mb-10 flex w-full flex-col items-center justify-center border-b-2 border-cyan-900">
@@ -11,16 +59,70 @@ const Portfolio = ({ isLoading }) => {
         </h1>
         <div className="mb-10 flex justify-center text-center md:justify-start">
           <p className="custom-ff-heading text-sm text-cyan-200">
-            Below are some of my latest projects. Click one to view more
-            information.
+            Below are some of my latest projects. Click "Read more" to see
+            further information.
           </p>
         </div>
       </div>
-      <div className="h-100 w-100 flex flex-col flex-wrap lg:flex-row">
-        {projects.map((proj) => (
-          <ProjectCards key={proj.id} proj={proj} />
-        ))}
+      <div className="custom-ff-heading mb-6 flex w-full flex-col justify-center text-xs text-cyan-200 sm:flex-row md:text-sm">
+        <div className="m-3 flex flex-col">
+          <label className="mb-3 text-center" htmlFor="filters">
+            Filter Projects
+          </label>
+          <select
+            className="w-50 rounded-md border-0 bg-cyan-900 px-3 py-2 outline-0"
+            name="filters"
+            id="filters"
+            onChange={filterProjects}
+          >
+            <option className="m-3" value="all">
+              All
+            </option>
+            <option className="m-3" value="full-stack">
+              Full-Stack
+            </option>
+            <option className="m-3" value="front-end">
+              Front-End &nbsp;&nbsp; only
+            </option>
+            <option className="m-3" value="back-end">
+              Back-End &nbsp;&nbsp; only
+            </option>
+          </select>
+        </div>
+        <div className="m-3 flex flex-col">
+          <label className="mb-3 text-center" htmlFor="sorts">
+            Sort Projects by
+          </label>
+          <select
+            className="w-50 rounded-md border-0 bg-cyan-900 px-3 py-2 outline-0"
+            name="sorts"
+            id="sorts"
+            onChange={sortProjects}
+          >
+            <option className="m-3" value="rel-desc">
+              Most Relevant
+            </option>
+            <option className="m-3" value="rel-asc">
+              Least Relevant
+            </option>
+            <option className="m-3" value="date-desc">
+              Newest First
+            </option>
+            <option className="m-3" value="date-asc">
+              Oldest First
+            </option>
+          </select>
+        </div>
       </div>
+      <div className="flex flex-col flex-wrap lg:flex-row">
+        {projectList.length > 0 &&
+          projectList.map((proj) => <ProjectCards key={proj.id} proj={proj} />)}
+      </div>
+      {projectList.length === 0 && (
+        <div className="custom-ff-heading my-6 flex w-full justify-center text-center text-xs text-cyan-200 md:text-sm">
+          <h2>No Projects found</h2>
+        </div>
+      )}
     </>
   );
 };

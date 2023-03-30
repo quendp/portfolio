@@ -102,13 +102,13 @@ const ProjectCards = ({ proj }) => {
               alt={proj.title}
             />
             <div
-              className="absolute top-0 left-0 flex h-full w-10 items-center justify-center bg-cyan-900/50 text-2xl text-cyan-200 hover:text-cyan-400"
+              className="absolute top-0 left-0 flex h-full w-12 items-center justify-center bg-cyan-900/50 text-2xl text-cyan-200 hover:text-cyan-400"
               onClick={handlePrev}
             >
               <FontAwesomeIcon icon={faChevronLeft} />
             </div>
             <div
-              className="absolute top-0 right-0 flex h-full w-10 items-center justify-center bg-cyan-900/50 text-2xl text-cyan-200 hover:text-cyan-400"
+              className="absolute top-0 right-0 flex h-full w-12 items-center justify-center bg-cyan-900/30 text-2xl text-cyan-200 hover:text-cyan-400"
               onClick={handleNext}
             >
               <FontAwesomeIcon icon={faChevronRight} />
